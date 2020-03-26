@@ -1,0 +1,67 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://assets/ui/Correndo04.png" type="Texture" id=1]
+[ext_resource path="res://scripts/runner/Player.gd" type="Script" id=2]
+[ext_resource path="res://assets/ui/Idle0.png" type="Texture" id=3]
+[ext_resource path="res://assets/ui/Correndo06.png" type="Texture" id=4]
+[ext_resource path="res://assets/ui/Correndo02.png" type="Texture" id=5]
+[ext_resource path="res://assets/ui/Correndo005.png" type="Texture" id=6]
+[ext_resource path="res://assets/ui/Down0.png" type="Texture" id=7]
+[ext_resource path="res://assets/ui/rasteira.png" type="Texture" id=8]
+[ext_resource path="res://assets/ui/Correndo001.png" type="Texture" id=9]
+[ext_resource path="res://assets/ui/Correndo00.png" type="Texture" id=10]
+[ext_resource path="res://assets/ui/Correndo007.png" type="Texture" id=11]
+[ext_resource path="res://assets/ui/Correndo03.png" type="Texture" id=12]
+[ext_resource path="res://icon.png" type="Texture" id=13]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 19.9135, 22.5 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 8 ) ],
+"loop": true,
+"name": "Rasteira",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 10 ), ExtResource( 9 ), ExtResource( 5 ), ExtResource( 12 ), ExtResource( 1 ), ExtResource( 6 ), ExtResource( 4 ), ExtResource( 11 ) ],
+"loop": true,
+"name": "Run",
+"speed": 9.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "Abaixado",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 5.0
+} ]
+
+[sub_resource type="RayShape2D" id=3]
+length = 17.3987
+
+[node name="Player" type="KinematicBody2D"]
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_horizontal_guides_": [  ]
+}
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="."]
+frames = SubResource( 2 )
+animation = "Abaixado"
+
+[node name="Gancho" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gancho"]
+shape = SubResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="Gancho/CollisionShape2D"]
+position = Vector2( 0, 9.0156 )
+scale = Vector2( 0.0829719, 0.276321 )
+texture = ExtResource( 13 )

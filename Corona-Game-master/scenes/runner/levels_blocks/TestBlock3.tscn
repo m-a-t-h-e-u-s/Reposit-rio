@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scripts/runner/LevelBase.gd" type="Script" id=2]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_top = 246.0
+margin_right = 1280.0
+margin_bottom = 434.0
+color = Color( 0.337255, 0.341176, 0.588235, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
