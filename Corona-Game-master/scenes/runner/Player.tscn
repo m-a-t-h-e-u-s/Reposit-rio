@@ -24,6 +24,11 @@ animations = [ {
 "name": "Rasteira",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 10 ), ExtResource( 9 ), ExtResource( 5 ), ExtResource( 12 ), ExtResource( 1 ), ExtResource( 6 ), ExtResource( 4 ), ExtResource( 11 ) ],
 "loop": true,
 "name": "Run",
@@ -32,11 +37,6 @@ animations = [ {
 "frames": [ ExtResource( 7 ) ],
 "loop": true,
 "name": "Abaixado",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 3 ) ],
-"loop": true,
-"name": "Idle",
 "speed": 5.0
 } ]
 
@@ -54,7 +54,8 @@ shape = SubResource( 1 )
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="."]
 frames = SubResource( 2 )
-animation = "Abaixado"
+animation = "Run"
+frame = 5
 
 [node name="Gancho" type="Area2D" parent="."]
 
@@ -62,6 +63,6 @@ animation = "Abaixado"
 shape = SubResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="Gancho/CollisionShape2D"]
-position = Vector2( 0, 9.0156 )
-scale = Vector2( 0.0829719, 0.276321 )
+position = Vector2( 0.0441949, 9.0598 )
+scale = Vector2( 0.0235861, 0.27494 )
 texture = ExtResource( 13 )
